@@ -1,13 +1,18 @@
 import React from "react";
+import {Provider} from 'react-redux'
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Navbar from "./Components/layout/Navbar";
+import Footer from "./Components/layout/Footer";
+import Landing from "./Components/home/Landing";
+import store from './store';
+
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <Navbar />
+      <Landing />
       <Footer />
-    </div>
+    </Provider>
   );
 }
 
