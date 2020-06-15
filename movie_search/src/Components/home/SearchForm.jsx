@@ -14,6 +14,7 @@ class SearchForm extends Component {
     e.preventDefault();
     this.props.fetchMovies(this.props.text);
     this.props.setLoading();
+    this.props.setIsSearch();
   };
   render() {
     return (
@@ -45,6 +46,8 @@ const mapStatesToProps = (state) => ({
   text: state.movies.text,
 });
 
-export default connect(mapStatesToProps, { searchMovie, fetchMovies,setLoading })(
-  SearchForm
-);
+export default connect(mapStatesToProps, {
+  searchMovie,
+  fetchMovies,
+  setLoading,
+})(SearchForm);

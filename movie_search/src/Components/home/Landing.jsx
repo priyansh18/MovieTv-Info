@@ -5,12 +5,24 @@ import Spinner from "./../layout/Spinner";
 import MoviesContainer from "./MoviesContainer";
 
 class Landing extends Component {
+  state = {
+    isSearch: false,
+  };
+
+  setIsSearch = () => {
+    this.setState({ isSearch: true });
+  };
   render() {
-    const { loading} = this.props;
+    const { isSearch } = this.state;
+    const { loading } = this.props;
     return (
       <div className="container">
-        <SearchForm />
-        {loading ? <Spinner /> : <MoviesContainer />}
+        <SearchForm setIsSearch={this.setIsSearch} />
+        {loading ? (
+          <Spinner />
+        ) : (
+          <MoviesContainer loading={loading} isSearch={isSearch} />
+        )}
       </div>
     );
   }
