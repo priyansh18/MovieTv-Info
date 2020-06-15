@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -6,9 +7,9 @@ const Navbar = () => {
       <nav className="navbar nnavbar-light bg-dark mb-5">
         <div className="container">
           <div className="navbar-header">
-            <a className="navar-brand text-white text-lg brand-text" href="#">
+            <Link className="navar-brand text-white text-lg brand-text" to="/">
               MovieSeriesInfo
-            </a>
+            </Link>
           </div>
           <ul className="nabar-nav ml-auto text-light d-inline-block">
             <li className="nav-item d-inline-block mr-4">

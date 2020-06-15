@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 class MoviesContainer extends Component {
   render() {
     const { movies } = this.props;
-    console.log(movies)
     let content = "";
 
     content =

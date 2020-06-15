@@ -49,7 +49,7 @@ class Movie extends Component {
               <h3>About:</h3>
               {movie.Plot}
               <hr />
-              <a href={`https://www.imdb.com/title/${movie.imdbID}`} target="_blank" className="btn btn-primary">
+              <a href={`https://www.imdb.com/title/${movie.imdbID}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 View on IMDB
               </a>
               <a href="/" className="btn btn-default text-light">
