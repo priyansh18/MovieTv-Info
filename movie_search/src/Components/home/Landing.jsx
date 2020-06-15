@@ -6,7 +6,7 @@ import MoviesContainer from "./MoviesContainer";
 
 class Landing extends Component {
   render() {
-    const { loading, movies } = this.props.loading;
+    const { loading} = this.props;
     return (
       <div className="container">
         <SearchForm />

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchMovie } from "./../../actions/searchAction";
+import { fetchMovie, setLoading } from "./../../actions/searchAction";
 
 class Movie extends Component {
   componentDidMount() {
     this.props.fetchMovie(this.props.match.params.id);
+    this.props.setLoading();
   }
   render() {
     return (
@@ -37,6 +38,7 @@ class Movie extends Component {
               <li className="list-group-item">
                 <strong>Actor:</strong>Movie Genre
               </li>
+            </ul>
           </div>
         </div>
         <div className="row">
@@ -64,4 +66,4 @@ const mapStateToProps = (state) => ({
   movie: state.movies.movie,
 });
 
-export default connect(mapStateToProps, { fetchMovie })(Movie);
+export default connect(mapStateToProps, { fetchMovie, setLoading })(Movie);
