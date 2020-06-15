@@ -23,11 +23,11 @@ export const fetchMovies = (text) => (dispatch) => {
 
 export const fetchMovie = (id) => (dispatch) => {
   axios
-    .get(`http://www.omdbapi.com/?apikey=${apikey}&s=${id}`)
+    .get(`http://www.omdbapi.com/?apikey=${apikey}&i=${id}`)
     .then((result) => {
       dispatch({
         type: FETCH_MOVIE,
-        payload: result.data.Search,
+        payload: result.data,
       });
     })
     .catch((err) => console.log(err));
